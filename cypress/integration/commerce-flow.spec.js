@@ -9,30 +9,43 @@ import{
     homePage,
     categoryPage,
     loginPage,
-    myAccountPage
+    myAccountPage,
+    createAccountPage,
 } from '../support/pages'
 
 
 describe('Fluxos do ecommerce', () => {
 
 
-    //acessar conteudo de mais de uma catyegoria
+    //acessar conteudo de mais de uma categoria
     //saber quais sao as categorias
     //acessar de forma dinamica uma categoria
     //validar de forma dinamica uma categoria
 
     //data driven tests
-    categoryPage.CATAGORIES.forEach(category => {
-        it.skip(`acessar categoria ${category}`, () => {
-            homePage.acessarCategoria(category);
-            categoryPage.validarAcessoACategoria(category)
-        });
-    });
-    it('realizar login', () => {
+
+
+    // categoryPage.CATAGORIES.forEach(category => {
+    //     it.skip(`acessar categoria ${category}`, () => {
+    //         homePage.acessarCategoria(category);
+    //         categoryPage.validarAcessoACategoria(category)
+    //     });
+    // });
+    // it('realizar login', () => {
+    //     homePage.acessarLogin();
+    //     loginPage.preencherLogin();
+    //     myAccountPage.validarLoginRealizadoComSucesso();
+         // })
+
+    //
+         
+    it('realizar Cadastro Usuario', ()=> {
         homePage.acessarLogin();
-        loginPage.preencherLogin();
-        myAccountPage.validarLoginRealizadoComSucesso();
-        
+        loginPage.preencherEmail();
+        createAccountPage.preencherCadastro();
+
+
+
     })
 });
 
